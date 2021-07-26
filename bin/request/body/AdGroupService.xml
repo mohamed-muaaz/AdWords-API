@@ -1,0 +1,38 @@
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Header>
+        <!--Defines the required and optional elements within the header of a SOAP request.-->
+        <RequestHeader xmlns="https://adwords.google.com/api/adwords/cm/v201809">
+            <!--The header identifies the customer id of the client of the AdWords manager, if an AdWords
+                manager is acting on behalf of their client or the customer id of the advertiser managing their
+                own account.-->
+            <clientCustomerId>774-035-4481</clientCustomerId>
+            <!--Developer token to identify that the person making the call has enough
+                quota.-->
+            <developerToken>UY4cVHSjCO7A3tihUCXOkQ</developerToken>
+            <!--UserAgent is used to track distribution of API client programs and
+                application usage. The client is responsible for putting in a meaningful
+                value for tracking purposes. To be clear this is not the same as an HTTP
+                user agent.-->
+            <userAgent>adWordsTest.com:ReportDownloader:V1.0</userAgent>
+            <!--Used to validate the request without executing it.-->
+            <validateOnly>false</validateOnly>
+            <!--If true, API will try to commit as many error free operations as possible and
+                report the other operations' errors.
+                
+                <p>Ignored for non-mutate calls.-->
+            <partialFailure>false</partialFailure>
+        </RequestHeader>
+    </Header>
+    <Body>
+        <!--Returns the list of campaigns that meet the selector criteria.
+            
+            @param serviceSelector the selector specifying the {@link Campaign}s to return.
+            @return A list of campaigns.
+            @throws ApiException if problems occurred while fetching campaign information.-->
+        <get xmlns="https://adwords.google.com/api/adwords/cm/v201809">
+            <serviceSelector>
+                <fields>Name</fields>
+            </serviceSelector>
+        </get>
+    </Body>
+</Envelope>
